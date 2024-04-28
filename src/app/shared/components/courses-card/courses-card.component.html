@@ -1,0 +1,21 @@
+<mat-card class="mt-4 mat-elevation-z5 course-card">
+    <mat-card-header>
+       <mat-card-title>
+        {{getCoursedata.description}}
+       </mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="getCoursedata.iconUrl" 
+    [alt]="getCoursedata.description"
+    [title]="getCoursedata.description">
+    <mat-card-content>
+        {{getCoursedata.longDescription}}
+    </mat-card-content>
+    <mat-card-actions class="d-flex justify-content-between">
+        <button mat-raised-button color="accent"
+        [routerLink]="['courses',getCoursedata.id]"
+        >View Course</button>
+        <button mat-raised-button color="primary"
+        (click)="onCourseEdit()"
+        >Edit Course</button>
+    </mat-card-actions>
+</mat-card>
